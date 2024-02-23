@@ -1,7 +1,7 @@
 # MATHWELL
 MATHWELL: Generating Educational Math Word Problems at Scale
 
-[Paper]()| [Model Weights](https://huggingface.co/bryanchrist/MATHWELL) | [SGSM Dataset](https://huggingface.co/datasets/bryanchrist/SGSM)| [Human Annotation Dataset](https://huggingface.co/datasets/bryanchrist/annotations)
+[Paper]() | [Model Weights](https://huggingface.co/bryanchrist/MATHWELL) | [SGSM Dataset](https://huggingface.co/datasets/bryanchrist/SGSM) | [Human Annotation Dataset](https://huggingface.co/datasets/bryanchrist/annotations)
 
 # Overview 
 Math word problems are critical K-8 educational tools, but writing them is time-consuming and requires domain expertise. We suggest that language models can support K-8 math education by automatically generating problems at scale. To be educational, generated problems must be 1) solvable, 2) accurate, and 3) appropriate. Existing datasets are unlabeled for these criteria, making them ill-suited for training problem generators. We introduce MATHWELL, a Llama-2 (70B) model iteratively finetuned to generate K-8 math word problems using data from expert annotation. Using MATHWELL, we generate the largest English word problem dataset to date, containing 20,490 problems. 3,484 are scored by domain experts who find MATHWELL has a 40% higher share of problems that have executable solutions and meet all criteria than alternatives, with 74% of its problems with executable solutions being solvable, accurate, and appropriate.
