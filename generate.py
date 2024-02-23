@@ -1,6 +1,6 @@
 import os
 import sys
-from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
+from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig, BitsAndBytesConfig
 import torch
 import bitsandbytes as bnb
 import pandas as pd
@@ -22,7 +22,14 @@ adapter_path = "bryanchrist/MATHWELL"   # Specify the path to the adapter weight
 
 tokenizer = AutoTokenizer.from_pretrained(adapter_path) # Load tokenizer
 
-model = AutoModelForCausalLM.from_pretrained(model_path, load_in_4bit=True, device_map="auto", use_auth_token=True) # Load model in 4 bit
+bnb_config = BitsAndBytesConfig(
+load_in_4bit=True,
+bnb_4bit_use_double_quant=True,
+bnb_4bit_quant_type="nf4",
+bnb_4bit_compute_dtype=torch.bfloat16
+) # Set up bitsandbytes config to load model in 4 bit
+
+model = AutoModelForCausalLM.from_pretrained(model_path, quantization_config=bnb_config, device_map="auto", use_auth_token=True) # Load model in 4 bit
 model = PeftModel.from_pretrained(model, adapter_path) # Create PEFT model 
 
 df = pd.read_csv('data/sgsm.csv') # Load SGSM dataset for few-shot prompting
