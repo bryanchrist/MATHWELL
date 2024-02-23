@@ -16,7 +16,7 @@ After installing PyTorch (follow instructions [here](https://pytorch.org/get-sta
 pip install -U -r requirements.txt
 ```
 
-For issues with loading MATHWELL using bitsandbytes, refer to their documentation [documentation](https://github.com/TimDettmers/bitsandbytes). 
+For issues with loading MATHWELL using bitsandbytes, refer to their [documentation](https://github.com/TimDettmers/bitsandbytes). 
 
 # Interacting with MATHWELL
 generate.py is an example script for loading and interacting with the MATHWELL model. In order to run the script, you'll need a .env file with a Llama-2 70B HuggingFace access token called huggingface_token. You can edit generate.py based on what precision you want to load the model in, what topics you want MATHWELL to generate questions about, and how many questions you want to generate. The default is to load the model in 4 bits and generate 10 questions about topics randomly selected from the list of topics we used to generate SGSM. The script will automatically parse the model outputs for executable code solutions and continue generation until the model has output the desired number of questions. The script will conclude by outputing a csv file titled "questions.csv" that contains the questions, solutions, answers, and associated topics. 
