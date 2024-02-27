@@ -21,3 +21,15 @@ For issues with loading MATHWELL using bitsandbytes, refer to their [documentati
 # Interacting with MATHWELL
 generate.py is an example script for loading and interacting with the MATHWELL model. In order to run the script, you'll need a .env file with a Llama-2 70B HuggingFace access token called huggingface_token. You can edit generate.py based on what precision you want to load the model in, what topics you want MATHWELL to generate questions about, and how many questions you want to generate. The default is to load the model in 4 bits and generate 10 questions about topics randomly selected from the list of topics we used to generate SGSM. The script will automatically parse the model outputs for executable code solutions and continue generation until the model has output the desired number of questions. The script will conclude by outputing a csv file titled "questions.csv" that contains the questions, solutions, answers, and associated topics. 
 
+# Citation
+
+```bash
+@misc{christ2024mathwell,
+      title={MATHWELL: Generating Educational Math Word Problems at Scale}, 
+      author={Bryan R Christ and Jonathan Kropko and Thomas Hartvigsen},
+      year={2024},
+      eprint={2402.15861},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
