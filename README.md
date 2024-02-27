@@ -1,6 +1,6 @@
 # MATHWELL
 
-[Paper]() | [Model Weights](https://huggingface.co/bryanchrist/MATHWELL) | [SGSM Dataset](https://huggingface.co/datasets/bryanchrist/SGSM) | [Human Annotation Dataset](https://huggingface.co/datasets/bryanchrist/annotations)
+[Paper](https://arxiv.org/abs/2402.15861) | [Model Weights](https://huggingface.co/bryanchrist/MATHWELL) | [SGSM Dataset](https://huggingface.co/datasets/bryanchrist/SGSM) | [Human Annotation Dataset](https://huggingface.co/datasets/bryanchrist/annotations)
 
 This codebase is based off the paper MATHWELL: Generating Educational Math Word Problems at Scale, and includes code for interacting with the MATHWELL model and SGSM dataset. 
 
