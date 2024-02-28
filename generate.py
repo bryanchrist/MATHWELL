@@ -14,8 +14,8 @@ from peft import (
 )
 from huggingface_hub import login
 
-token = os.environ['huggingface_token'] #Load huggingface token from .env to access Llama-2 
-login(token=token) #Log into huggingface
+token = os.environ['huggingface_token'] # Load huggingface token from .env to access Llama-2 
+login(token=token) # Log into huggingface
 
 model_path = "meta-llama/Llama-2-70b-hf"   # Specify the path to the model
 adapter_path = "bryanchrist/MATHWELL"   # Specify the path to the adapter weights
