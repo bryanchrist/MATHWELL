@@ -155,7 +155,7 @@ python qlora.py \
     --seed 0
 ```
 
-# Automatically Evaluating Outputs
+# Automatically Evaluating Outputs - Coming Soon!
 You can find sample scripts for automatically evaluating model outputs in the experiments folder. These files contain the same code we used to conduct experiments in the paper. 
 
 # Citation
