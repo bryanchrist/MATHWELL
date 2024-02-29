@@ -155,8 +155,8 @@ python qlora.py \
     --seed 0
 ```
 
-# Automatically Evaluating Outputs - Coming Soon!
-You can find sample scripts for automatically evaluating model outputs in the experiments folder. These files contain the same code we used to conduct experiments in the paper. 
+# Automatically Evaluating Outputs
+You can find sample scripts for automatically evaluating model outputs and training text classifiers in the main directory (text_classifier.py, question_length.py, ppl.py, reading_level.py, bertscore.py). These files contain the same code we used to conduct experiments in the paper. They each contain functions to conduct the experiment and an example implementation. You can modify them to run any of the experiments reported in our paper. 
 
 # Citation
 ```bash
