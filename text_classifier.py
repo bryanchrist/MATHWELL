@@ -16,6 +16,8 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 # Prepare data for solvability classifier
 df = pd.read_csv('data/sgsm.csv')
+# Restrict df to the initial set of human annotation data generated from finetuned llama-2 to replicate experiments reported in paper
+df = df[df['model'] == "finetuned_llama"]
 df['solvability'] = df['solvability'].astype('int')
 df = df.rename({'solvability': 'label', 'question': 'text'}, axis = 1)
 df = df[['text', 'label']]
