@@ -24,7 +24,7 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 
 # Load data
-sgsm = pd.read_csv('data/sgsm.csv')
+egsm = pd.read_csv('data/egsm.csv')
 
 # This function calculates the perplexity for question/answer pairs in a pandas dataframe in the format outputted by MATHWELL. Note that you will need a DF with a separate question
 # and solution column for this code to run. 
@@ -43,5 +43,5 @@ def perplexity(df):
     return ppls
 
 # Example usage
-ppl = perplexity(sgsm)
-print(f'Average SGSM overall perplexity: {np.mean(ppl)} Standard Deviation: {np.std(ppl)}')
+ppl = perplexity(egsm)
+print(f'Average EGSM overall perplexity: {np.mean(ppl)} Standard Deviation: {np.std(ppl)}')
