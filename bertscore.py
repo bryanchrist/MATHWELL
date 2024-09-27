@@ -3,9 +3,7 @@ import pandas as pd
 import numpy as np 
 bertscore = load("bertscore")
 
-sgsm = pd.read_csv('data/sgsm.csv')
-sgsm_unan = sgsm[sgsm['subset']=='sgsm_unannotated']
-sgsm_train = sgsm[sgsm['subset']=='sgsm_train']
+egsm = pd.read_csv('data/egsm.csv')
 
 # Note this function expects two pandas dfs as input, column names for the questions in each df as strings, and optional arguments for whether 
 # you are calculating within df bertscore and the limit for how many rows you want to compare. The function itself calculates bertscore for all pairwise comparisons
@@ -84,6 +82,6 @@ def score(df1, df2, df1var, df2var, same_df = False, limit = 2000):
     return (precision, recall, f1)
 
 # Example usage
-scores = score(sgsm_train, sgsm_unan, 'question', 'question')
-result = f"Average SGSM Train overall BERTScore: Precision: {np.mean(scores[0])}, Recall: {np.mean(scores[1])}, F1: {np.mean(scores[2])}"
+scores = score(egsm, egsm, 'question', 'question')
+result = f"Average EGSM overall BERTScore: Precision: {np.mean(scores[0])}, Recall: {np.mean(scores[1])}, F1: {np.mean(scores[2])}"
 print(result) 
