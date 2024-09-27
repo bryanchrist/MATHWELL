@@ -2,7 +2,7 @@ import textstat
 import pandas as pd
 import numpy as np
 
-sgsm = pd.read_csv('data/sgsm.csv')
+egsm = pd.read_csv('data/egsm.csv')
 
 # This function calculates readability metrics for a pandas dataframe. Note you need to specify the column name for the question text.
 def readability(df, varname):
@@ -24,5 +24,5 @@ def readability(df, varname):
     return grades, ndcs
 
 # Example usage 
-readability(sgsm, 'question')
+readability(egsm, 'question')
 
