@@ -160,11 +160,11 @@ You can find sample scripts for automatically evaluating model outputs and train
 
 # Citation
 ```bash
-@inproceedings{christ_bryan_r_mathwell_2024,
+@inproceedings{christ_mathwell_2024,
 	title = {{MATHWELL}: {Generating} {Educational} {Math} {Word} {Problems} {Using} {Teacher} {Annotations}},
 	url = {https://openreview.net/forum?id=jNsjlRfpk0},
 	booktitle = {The 2024 {Conference} on {Empirical} {Methods} in {Natural} {Language} {Processing}},
-	author = {{Christ, Bryan R.} and Kropko, Jonathan and Hartvigsen, Thomas},
+	author = {Christ, Bryan R. and Kropko, Jonathan and Hartvigsen, Thomas},
 	year = {2024},
 }
 ```
