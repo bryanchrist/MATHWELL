@@ -56,7 +56,7 @@ annotations = load_dataset('bryanchrist/annotations')
 *Note: You will need to create a train/test split if you wish to have a validation sample. 
 
 # Interacting with MATHWELL
-generate.py is an example script for loading and interacting with the MATHWELL model, including the suggested few-shot prompting strategy using data from EGSM Train in an Alpaca-style prompt. In order to run the script, you'll need a .env file with a Llama-2 70B HuggingFace access token called huggingface_token. You can edit generate.py based on what precision you want to load the model in, what topics you want MATHWELL to generate questions about, and how many questions you want to generate. The default is to load the model in 4 bits and generate 10 questions about topics randomly selected from the list of topics we used to generate EGSM. The script will automatically parse the model outputs for executable code solutions and continue generation until the model has output the desired number of questions. The script will conclude by outputing a csv file titled "questions.csv" that contains the questions, solutions, answers, and associated topics. 
+generate.py is an example script for loading and interacting with the MATHWELL model, including the suggested few-shot prompting strategy using data from EGSM in an Alpaca-style prompt. In order to run the script, you'll need a .env file with a Llama-2 70B HuggingFace access token called huggingface_token. You can edit generate.py based on what precision you want to load the model in, what topics you want MATHWELL to generate questions about, and how many questions you want to generate. The default is to load the model in 4 bits and generate 10 questions about topics randomly selected from the list of topics we used to generate EGSM. The script will automatically parse the model outputs for executable code solutions and continue generation until the model has output the desired number of questions. The script will conclude by outputing a csv file titled "questions.csv" that contains the questions, solutions, answers, and associated topics. 
 
 # Training MATHWELL
 qlora.py contains the code to train the MATHWELL model and is based off the [QLoRA repository](https://github.com/artidoro/qlora) with minor changes to support loading a HuggingFace access token and fixing an embedding dimension issue when using Llama-2 by padding to a multiple of 64. It supports all the functionality listed in their repository. In order to run the script, you'll need a .env file with a Llama-2 70B HuggingFace access token called huggingface_token. To finetune the model the same way we did in the paper, you'll need to do two rounds of finetuning. 
@@ -108,7 +108,7 @@ python qlora.py \
     --seed 0
 ```
 
-Next, you will conduct a second round of finetuning using EGSM Train for 1,250 steps. This can be accomplished by running: 
+Next, you will conduct a second round of finetuning using EGSM for 1,250 steps. This can be accomplished by running: 
 
 ```bash
 python qlora.py \
@@ -140,7 +140,7 @@ python qlora.py \
     --warmup_ratio 0.03 \
     --lr_scheduler_type constant \
     --gradient_checkpointing \
-    --dataset="data/egsm_train.json" \
+    --dataset="data/egsm.json" \
     --source_max_len 16 \
     --target_max_len 512 \
     --per_device_train_batch_size 1 \
