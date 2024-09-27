@@ -8,7 +8,7 @@ from huggingface_hub import login
 token = os.environ['huggingface_token'] #Load huggingface token from .env to access Llama-2 
 login(token=token) #Log into huggingface
 
-sgsm = pd.read_csv('data/sgsm.csv')
+egsm = pd.read_csv('data/egsm.csv')
 model_path = "meta-llama/Llama-2-70b-hf"   # Specify the path to the model
 tokenizer = AutoTokenizer.from_pretrained(model_path, token=token)
 
@@ -29,5 +29,5 @@ def check_length(df, varname):
     return question_lengths
 
 # Example usage 
-sgsm_len = check_length(sgsm, 'question')
-print(f'Average overall question length in tokens: {np.mean(sgsm_len)} Standard Deviation: {np.std(sgsm_len)}')
+egsm_len = check_length(egsm, 'question')
+print(f'Average overall question length in tokens: {np.mean(egsm_len)} Standard Deviation: {np.std(egsm_len)}')
